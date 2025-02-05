@@ -27,6 +27,9 @@ public class DataBase : MonoBehaviour
             PlayerPrefs.SetInt(Studentname + "Student Number", studentnumber);
             PlayerPrefs.SetString(Studentname + "Student Section", StudentSection);
             PlayerPrefs.Save();
+        }
+        else
+        {
             Debug.Log("Student Date saved: " + Studentname);
         }
     }
