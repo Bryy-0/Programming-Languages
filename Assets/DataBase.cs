@@ -38,10 +38,10 @@ public class DataBase : MonoBehaviour
         string studentName = Search.text;
         if (PlayerPrefs.HasKey(studentName + "Age")) 
         {
-            int age = PlayerPrefs.GetInt(studentName + "Age");
-            int studentnumber = PlayerPrefs.GetInt(studentName + "Name");
-            string studentSection = PlayerPrefs.GetString(studentName + "Student Section");
-            resultText.text = $"Name: {studentName}\nAge: {age}\n SN: {studentnumber}\nSection: {studentSection}m";
+            int AGE = PlayerPrefs.GetInt(studentName + "Age");
+            int studentNumber = PlayerPrefs.GetInt(studentName + "Name");
+            string STUDENTsection = PlayerPrefs.GetString(studentName + "Student Section");
+            resultText.text = $"Name: {studentName}\nAge: {AGE}\n SN: {studentNumber}\nSection: {STUDENTsection}m";
         }
         else
         {
