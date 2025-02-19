@@ -23,25 +23,27 @@ public class DataBase : MonoBehaviour
             int.TryParse(StudentID.text, out studentnumber) &&
             !string.IsNullOrEmpty(StudentSection))
         {
-            PlayerPrefs.SetInt(Studentname + "Name", age);
+            PlayerPrefs.SetString(Studentname + "Name", Studentname);
+            PlayerPrefs.SetInt(Studentname + "Age", age);
             PlayerPrefs.SetInt(Studentname + "Student Number", studentnumber);
             PlayerPrefs.SetString(Studentname + "Student Section", StudentSection);
             PlayerPrefs.Save();
+            Debug.Log("Student Date saved: " + Studentname);
         }
         else
         {
-            Debug.Log("Student Date saved: " + Studentname);
+            Debug.Log("Student Not saved: " + Studentname);
         }
     }
-    public void LoadStudnetData()
+    public void LoadStudentData()
     {
-        string studentName = Search.text;
-        if (PlayerPrefs.HasKey(studentName + "Age")) 
+        string studentSearch = Search.text;
+        if (PlayerPrefs.HasKey(studentSearch + "Name")) 
         {
-            int AGE = PlayerPrefs.GetInt(studentName + "Age");
-            int studentNumber = PlayerPrefs.GetInt(studentName + "Name");
-            string STUDENTsection = PlayerPrefs.GetString(studentName + "Student Section");
-            resultText.text = $"Name: {studentName}\nAge: {AGE}\n SN: {studentNumber}\nSection: {STUDENTsection}m";
+            int Loadage = PlayerPrefs.GetInt(studentSearch + "Age");
+            int LoadstudentNumber = PlayerPrefs.GetInt(studentSearch + "Student Number");
+            string Loadsection = PlayerPrefs.GetString(studentSearch + "Student Section");
+            resultText.text = $"Name: {studentSearch}\nAge: {Loadage}\n SN: {LoadstudentNumber}\nSection: {Loadsection}";
         }
         else
         {
